@@ -23,4 +23,20 @@ $(document).ready(function(){
 function sendEmail() {
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
+
+    $.ajax({
+        url: 'utils.php',
+        type: 'post',
+        data: {
+            email: email,
+            message: message
+        },
+        dataType: 'json',
+        success:function(response) {
+            var len = response.length;
+        },
+        error: function(response) {
+
+        }
+    });
 }
