@@ -8,6 +8,136 @@ body {
     color: #f0f0f0;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar, .footer {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode (default) */
+body, .navbar, .footer {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #f0f0f0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #000; /* Turn black on hover */
+}
+
+.navbar-dark .navbar-brand {
+    color: #f0f0f0;
+}
+
+.btn-outline-light {
+    color: #f0f0f0;
+    border-color: #f0f0f0;
+}
+
+.btn-outline-light:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Light mode */
+body.light-mode, .navbar.light-mode, .footer.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+.navbar-light-mode .navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-light-mode .navbar-nav .nav-link:hover {
+    color: #000; /* Turn black on hover */
+}
+
+.navbar-light-mode .navbar-brand {
+    color: #333;
+}
+
+.btn-outline-dark {
+    color: #333;
+    border-color: #333;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Form inputs */
+body.light-mode .form-control {
+    background-color: #e9ecef; /* Darker grey, not too dark */
+    color: #333; /* Dark text */
+    border-color: #ced4da;
+}
+
+body.light-mode .form-control::placeholder {
+    color: #6c757d; /* Slightly darker grey for placeholders */
+}
+
+body.light-mode .form-control:focus {
+    background-color: #e9ecef; /* Keep the same color on focus */
+}
+
+body.light-mode .form-label {
+    color: #333; /* Black text for labels in light mode */
+}
+
+/* Project cards */
+body.light-mode .card {
+    background-color: #e9ecef; /* Darker grey, not too dark */
+}
+
+body.light-mode .card-title, 
+body.light-mode .card-text {
+    color: #333; /* Black text for card titles and text in light mode */
+}
+
+/* Toggle switch */
+.theme-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-toggle-switch {
+    display: flex;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #333;
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.theme-toggle-switch .slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.theme-toggle-switch.light-mode {
+    background-color: #fff;
+    border-color: #333;
+}
+
+.theme-toggle-switch.light-mode .slider {
+    background-color: #333;
+    transform: translateX(30px);
 }
 
 .navbar {
@@ -20,10 +150,6 @@ body {
 
 .navbar-nav .nav-link {
     color: #ffffff !important;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #a40d42 !important;
 }
 
 header {
@@ -114,9 +240,9 @@ textarea {
     transition: background-color 0.3s;
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
     background-color: #a40d42;
-}
+} */
 
 .section {
     position: relative; /* Creates a positioning context for the pseudo-element */
